@@ -1,5 +1,5 @@
 package com.mycompany.sistema_academico.dto;
 
-public record UserUpdateDTO (String email, String password)
-{
-}
+import java.util.UUID;
+
+public record UserUpdateDTO (UUID userId, String username, String email, String password) {}
