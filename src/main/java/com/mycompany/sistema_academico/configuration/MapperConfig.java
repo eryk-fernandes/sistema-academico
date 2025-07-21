@@ -1,6 +1,6 @@
 package com.mycompany.sistema_academico.configuration;
 
-import com.mycompany.sistema_academico.mapper.UserMapper;
+import com.mycompany.sistema_academico.mapper.factory.UserMapperFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class MapperConfig {
 
     @Bean
-    public UserMapper userMapper() {
-        return new UserMapper();
+    public UserMapperFactory userMapper() {
+        return new UserMapperFactory();
     }
 }

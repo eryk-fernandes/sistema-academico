@@ -1,9 +1,11 @@
-package com.mycompany.sistema_academico.mapper;
+package com.mycompany.sistema_academico.mapper.concrete_mapper;
 
 import com.mycompany.sistema_academico.dto.UserResponseDTO;
 import com.mycompany.sistema_academico.entity.User;
+import com.mycompany.sistema_academico.mapper.abstract_mapper.ResponseMapper;
 
-public class UserMapper implements Mapper<User, UserResponseDTO> {
+public class UserResponseMapper implements ResponseMapper<User, UserResponseDTO>
+{
 
     @Override
     public User toEntity(UserResponseDTO userResponseDTO) {
@@ -13,17 +15,15 @@ public class UserMapper implements Mapper<User, UserResponseDTO> {
         user.setUsername(userResponseDTO.username());
         user.setEmail(userResponseDTO.email());
 
-        return new User();
+        return user;
     }
 
     @Override
     public UserResponseDTO toDTO(User user) {
-
         return new UserResponseDTO(
                 user.getUserId(),
                 user.getUsername(),
                 user.getEmail()
         );
     }
-
 }

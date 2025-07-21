@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -28,9 +29,19 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping()
+    public ResponseEntity<List<UserResponseDTO>> getUsers() {
+        List<UserResponseDTO> users = userService.findAll();
+
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PostMapping()
     public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserCreateDTO userCreateDTO) {
-        UserResponseDTO userResponseDTO = userService.createUser(userCreateDTO);
+        UserResponseDTO userResponseDTO = userService.create(userCreateDTO);
 
         return ResponseEntity.created(URI.create("users/" + userResponseDTO.userId())).build();
     }
@@ -44,7 +55,7 @@ public class UserController {
     @PutMapping()
     public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserUpdateDTO userUpdateDTO) {
 
-        UserResponseDTO userResponseDTO = userService.updateUser(userUpdateDTO);
+        UserResponseDTO userResponseDTO = userService.update(userUpdateDTO);
 
         if (userResponseDTO != null) {
             return ResponseEntity.ok(userResponseDTO);
