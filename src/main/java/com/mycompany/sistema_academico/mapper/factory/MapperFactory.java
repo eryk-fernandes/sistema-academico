@@ -1,13 +1,13 @@
 package com.mycompany.sistema_academico.mapper.factory;
 
-import com.mycompany.sistema_academico.mapper.abstract_mapper.CreateMapper;
-import com.mycompany.sistema_academico.mapper.abstract_mapper.ResponseMapper;
-import com.mycompany.sistema_academico.mapper.abstract_mapper.UpdateMapper;
+import com.mycompany.sistema_academico.mapper.abstract_mapper.CriacaoMapper;
+import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
+import com.mycompany.sistema_academico.mapper.abstract_mapper.AtualizacaoMapper;
 
 public interface MapperFactory<T, C, R, U> {
 
-    CreateMapper<T, C> createMapper();
-    ResponseMapper<T, R> responseMapper();
-    UpdateMapper<T, U> updateMapper();
+    CriacaoMapper<T, C> criarCriacaoMapper();
+    RespostaMapper<T, R> criarRespostaMapper();
+    AtualizacaoMapper<T, U> criarAtualizacaoMapper();
 
 }

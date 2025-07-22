@@ -1,6 +1,5 @@
 package com.mycompany.sistema_academico.entity;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,25 +12,25 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
+@Table(name = "usuarios")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID userId;
-    @Column(name = "username", nullable = false, length = 255, unique = true)
-    private String username;
+    private UUID usuarioId;
+    @Column(name = "nomeUsuario", nullable = false, length = 255, unique = true)
+    private String nomeUsuario;
     @Column(name = "email", nullable = false, length = 255, unique = true)
     private String email;
-    @Column(name = "password", nullable = false, length = 255)
-    private String password;
+    @Column(name = "senha", nullable = false, length = 255)
+    private String senha;
     @CreationTimestamp
-    private Instant createdTimeStamp;
+    private Instant instanteCriacao;
     @UpdateTimestamp
-    private Instant updatedTimeStamp;
+    private Instant instanteAtualizacao;
 
 }

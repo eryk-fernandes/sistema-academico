@@ -1,4 +1,4 @@
 package com.mycompany.sistema_academico.dto;
 
-public interface UserDTO {
+public interface UsuarioDTO {
 }
