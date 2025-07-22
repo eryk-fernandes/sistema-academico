@@ -9,10 +9,10 @@ public class AtualizacaoUsuarioMapper implements AtualizacaoMapper<Usuario, Usua
     @Override
     public Usuario toEntity(UsuarioAtualizacaoDTO usuarioAtualizacaoDTO) {
         Usuario usuario = new Usuario();
-        usuario.setUsuarioId(usuarioAtualizacaoDTO.userId());
-        usuario.setNomeUsuario(usuarioAtualizacaoDTO.username());
+        usuario.setIdUsuario(usuarioAtualizacaoDTO.usuarioId());
+        usuario.setNomeUsuario(usuarioAtualizacaoDTO.nomeUsuario());
         usuario.setEmail(usuarioAtualizacaoDTO.email());
-        usuario.setSenha(usuarioAtualizacaoDTO.password());
+        usuario.setSenha(usuarioAtualizacaoDTO.senha());
 
         return usuario;
     }
@@ -20,7 +20,7 @@ public class AtualizacaoUsuarioMapper implements AtualizacaoMapper<Usuario, Usua
     @Override
     public UsuarioAtualizacaoDTO toDTO(Usuario usuario) {
         return new UsuarioAtualizacaoDTO(
-                usuario.getUsuarioId(),
+                usuario.getIdUsuario(),
                 usuario.getNomeUsuario(),
                 usuario.getEmail(),
                 usuario.getSenha()

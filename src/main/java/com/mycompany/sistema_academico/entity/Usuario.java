@@ -21,15 +21,21 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID usuarioId;
-    @Column(name = "nomeUsuario", nullable = false, length = 255, unique = true)
+    @Column(name = "id_usuario")
+    private UUID idUsuario;
+
+    @Column(name = "nome_usuario", unique = true)
     private String nomeUsuario;
-    @Column(name = "email", nullable = false, length = 255, unique = true)
+
+    @Column(name = "email", unique = true)
     private String email;
-    @Column(name = "senha", nullable = false, length = 255)
+
+    @Column(name = "senha")
     private String senha;
+
     @CreationTimestamp
     private Instant instanteCriacao;
+
     @UpdateTimestamp
     private Instant instanteAtualizacao;
 

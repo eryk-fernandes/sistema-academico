@@ -8,9 +8,9 @@ public class CriacaoUsuarioMapper implements CriacaoMapper<Usuario, UsuarioCriac
     @Override
     public Usuario toEntity(UsuarioCriacaoDTO usuarioCriacaoDTO) {
         Usuario usuario = new Usuario();
-        usuario.setNomeUsuario(usuarioCriacaoDTO.username());
+        usuario.setNomeUsuario(usuarioCriacaoDTO.nomeUsuario());
         usuario.setEmail(usuarioCriacaoDTO.email());
-        usuario.setSenha(usuarioCriacaoDTO.password());
+        usuario.setSenha(usuarioCriacaoDTO.senha());
 
         return usuario;
     }

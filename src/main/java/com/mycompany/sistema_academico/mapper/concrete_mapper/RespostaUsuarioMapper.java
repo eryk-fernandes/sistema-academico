@@ -11,7 +11,7 @@ public class RespostaUsuarioMapper implements RespostaMapper<Usuario, UsuarioRes
     public Usuario toEntity(UsuarioRespostaDTO usuarioRespostaDTO) {
 
         Usuario usuario = new Usuario();
-        usuario.setUsuarioId(usuarioRespostaDTO.usuarioId());
+        usuario.setIdUsuario(usuarioRespostaDTO.usuarioId());
         usuario.setNomeUsuario(usuarioRespostaDTO.nomeUsuario());
         usuario.setEmail(usuarioRespostaDTO.email());
 
@@ -21,7 +21,7 @@ public class RespostaUsuarioMapper implements RespostaMapper<Usuario, UsuarioRes
     @Override
     public UsuarioRespostaDTO toDTO(Usuario usuario) {
         return new UsuarioRespostaDTO(
-                usuario.getUsuarioId(),
+                usuario.getIdUsuario(),
                 usuario.getNomeUsuario(),
                 usuario.getEmail()
         );

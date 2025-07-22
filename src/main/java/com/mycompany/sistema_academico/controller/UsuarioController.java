@@ -40,7 +40,7 @@ public class UsuarioController {
     }
 
     @PostMapping()
-    public ResponseEntity<UsuarioRespostaDTO> salvarUsuario(@RequestBody UsuarioCriacaoDTO usuarioCriacaoDTO) {
+    public ResponseEntity<UsuarioRespostaDTO> criarUsuario(@RequestBody UsuarioCriacaoDTO usuarioCriacaoDTO) {
         UsuarioRespostaDTO usuarioRespostaDTO = usuarioService.criar(usuarioCriacaoDTO);
 
         return ResponseEntity.created(URI.create("users/" + usuarioRespostaDTO.usuarioId())).build();
