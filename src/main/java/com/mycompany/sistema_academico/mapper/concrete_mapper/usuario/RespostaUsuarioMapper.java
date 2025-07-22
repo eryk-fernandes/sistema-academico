@@ -1,6 +1,6 @@
-package com.mycompany.sistema_academico.mapper.concrete_mapper;
+package com.mycompany.sistema_academico.mapper.concrete_mapper.usuario;
 
-import com.mycompany.sistema_academico.dto.UsuarioRespostaDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioRespostaDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
 

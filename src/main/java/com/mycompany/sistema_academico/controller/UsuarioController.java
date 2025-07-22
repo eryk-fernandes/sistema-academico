@@ -1,8 +1,8 @@
 package com.mycompany.sistema_academico.controller;
 
-import com.mycompany.sistema_academico.dto.UsuarioCriacaoDTO;
-import com.mycompany.sistema_academico.dto.UsuarioRespostaDTO;
-import com.mycompany.sistema_academico.dto.UsuarioAtualizacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioCriacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioRespostaDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.service.UsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +12,14 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/usuarios")
 @AllArgsConstructor
 public class UsuarioController {
 
     private UsuarioService usuarioService;
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<UsuarioRespostaDTO> recuperarUsuarioPorId(@PathVariable("userId") String userId) {
+    @GetMapping("/{idUsuario}")
+    public ResponseEntity<UsuarioRespostaDTO> recuperarUsuarioPorId(@PathVariable("idUsuario") String userId) {
 
         UsuarioRespostaDTO usuarioRespostaDTO = usuarioService.recuperarPorId(userId);
 
@@ -46,8 +46,8 @@ public class UsuarioController {
         return ResponseEntity.created(URI.create("users/" + usuarioRespostaDTO.usuarioId())).build();
     }
 
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable("userId") String usuarioId) {
+    @DeleteMapping("/{idUsuario}")
+    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable("idUsuario") String usuarioId) {
         usuarioService.removerPorId(usuarioId);
         return ResponseEntity.noContent().build();
     }

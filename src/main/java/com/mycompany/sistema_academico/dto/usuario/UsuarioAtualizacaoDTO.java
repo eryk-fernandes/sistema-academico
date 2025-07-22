@@ -1,4 +1,4 @@
-package com.mycompany.sistema_academico.dto;
+package com.mycompany.sistema_academico.dto.usuario;
 
 import java.util.UUID;
 

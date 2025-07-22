@@ -1,15 +1,15 @@
 package com.mycompany.sistema_academico.mapper.factory;
 
-import com.mycompany.sistema_academico.dto.UsuarioCriacaoDTO;
-import com.mycompany.sistema_academico.dto.UsuarioRespostaDTO;
-import com.mycompany.sistema_academico.dto.UsuarioAtualizacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioCriacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioRespostaDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.CriacaoMapper;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.AtualizacaoMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.AtualizacaoUsuarioMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.RespostaUsuarioMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.CriacaoUsuarioMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.AtualizacaoUsuarioMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.RespostaUsuarioMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.CriacaoUsuarioMapper;
 
 public class UsuarioMapperFactory implements MapperFactory<Usuario, UsuarioCriacaoDTO, UsuarioRespostaDTO, UsuarioAtualizacaoDTO> {
 

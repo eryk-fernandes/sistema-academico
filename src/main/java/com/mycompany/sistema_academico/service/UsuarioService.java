@@ -1,8 +1,8 @@
 package com.mycompany.sistema_academico.service;
 
-import com.mycompany.sistema_academico.dto.UsuarioCriacaoDTO;
-import com.mycompany.sistema_academico.dto.UsuarioRespostaDTO;
-import com.mycompany.sistema_academico.dto.UsuarioAtualizacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioCriacaoDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioRespostaDTO;
+import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.factory.UsuarioMapperFactory;
 import com.mycompany.sistema_academico.repository.UsuarioRepository;
