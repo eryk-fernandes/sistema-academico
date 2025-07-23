@@ -7,24 +7,24 @@ import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.CriacaoMapper;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.AtualizacaoMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.AtualizacaoUsuarioMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.RespostaUsuarioMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.CriacaoUsuarioMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioAtualizacaoMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioRespostaMapper;
+import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioCriacaoMapper;
 
 public class UsuarioMapperFactory implements MapperFactory<Usuario, UsuarioCriacaoDTO, UsuarioRespostaDTO, UsuarioAtualizacaoDTO> {
 
     @Override
     public CriacaoMapper<Usuario, UsuarioCriacaoDTO> criarCriacaoMapper() {
-        return new CriacaoUsuarioMapper();
+        return new UsuarioCriacaoMapper();
     }
 
     @Override
     public RespostaMapper<Usuario, UsuarioRespostaDTO> criarRespostaMapper() {
-        return new RespostaUsuarioMapper();
+        return new UsuarioRespostaMapper();
     }
 
     @Override
     public AtualizacaoMapper<Usuario, UsuarioAtualizacaoDTO> criarAtualizacaoMapper() {
-        return new AtualizacaoUsuarioMapper();
+        return new UsuarioAtualizacaoMapper();
     }
 }

@@ -4,12 +4,12 @@ import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.AtualizacaoMapper;
 
-public class AtualizacaoUsuarioMapper implements AtualizacaoMapper<Usuario, UsuarioAtualizacaoDTO> {
+public class UsuarioAtualizacaoMapper implements AtualizacaoMapper<Usuario, UsuarioAtualizacaoDTO> {
 
     @Override
     public Usuario toEntity(UsuarioAtualizacaoDTO usuarioAtualizacaoDTO) {
         Usuario usuario = new Usuario();
-        usuario.setIdUsuario(usuarioAtualizacaoDTO.usuarioId());
+        usuario.setIdUsuario(usuarioAtualizacaoDTO.idUsuario());
         usuario.setNomeUsuario(usuarioAtualizacaoDTO.nomeUsuario());
         usuario.setEmail(usuarioAtualizacaoDTO.email());
         usuario.setSenha(usuarioAtualizacaoDTO.senha());

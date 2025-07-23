@@ -4,6 +4,7 @@ import com.mycompany.sistema_academico.dto.usuario.UsuarioCriacaoDTO;
 import com.mycompany.sistema_academico.dto.usuario.UsuarioRespostaDTO;
 import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
+import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
 import com.mycompany.sistema_academico.mapper.factory.UsuarioMapperFactory;
 import com.mycompany.sistema_academico.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
@@ -31,9 +32,9 @@ public class UsuarioService {
     public List<UsuarioRespostaDTO> recuperarTodos() {
         List<Usuario> usuarios = usuarioRepository.findAll();
 
-        return usuarios.stream().map(
-                u -> usuarioMapper.criarRespostaMapper().toDTO(u)
-        ).toList();
+        RespostaMapper<Usuario, UsuarioRespostaDTO> respostaMapper = usuarioMapper.criarRespostaMapper();
+
+        return usuarios.stream().map(respostaMapper::toDTO).toList();
     }
 
     public UsuarioRespostaDTO criar(UsuarioCriacaoDTO usuarioCriacaoDTO) {
@@ -62,7 +63,7 @@ public class UsuarioService {
 
     public UsuarioRespostaDTO atualizar(UsuarioAtualizacaoDTO usuarioAtualizacaoDTO) {
 
-        Optional<Usuario> userOptional = usuarioRepository.findById(usuarioAtualizacaoDTO.usuarioId());
+        Optional<Usuario> userOptional = usuarioRepository.findById(usuarioAtualizacaoDTO.idUsuario());
 
         if (userOptional.isEmpty()) {
             return null;

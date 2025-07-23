@@ -34,9 +34,11 @@ public class Usuario {
     private String senha;
 
     @CreationTimestamp
+    @Column(name = "instante_criacao")
     private Instant instanteCriacao;
 
     @UpdateTimestamp
+    @Column(name = "instante_atualizacao")
     private Instant instanteAtualizacao;
 
 }

@@ -43,11 +43,11 @@ public class UsuarioController {
     public ResponseEntity<UsuarioRespostaDTO> criarUsuario(@RequestBody UsuarioCriacaoDTO usuarioCriacaoDTO) {
         UsuarioRespostaDTO usuarioRespostaDTO = usuarioService.criar(usuarioCriacaoDTO);
 
-        return ResponseEntity.created(URI.create("users/" + usuarioRespostaDTO.usuarioId())).build();
+        return ResponseEntity.created(URI.create("users/" + usuarioRespostaDTO.idUsuario())).build();
     }
 
     @DeleteMapping("/{idUsuario}")
-    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable("idUsuario") String usuarioId) {
+    public ResponseEntity<Void> removerUsuarioPorId(@PathVariable("idUsuario") String usuarioId) {
         usuarioService.removerPorId(usuarioId);
         return ResponseEntity.noContent().build();
     }

@@ -4,7 +4,7 @@ import com.mycompany.sistema_academico.dto.usuario.UsuarioCriacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.CriacaoMapper;
 
-public class CriacaoUsuarioMapper implements CriacaoMapper<Usuario, UsuarioCriacaoDTO> {
+public class UsuarioCriacaoMapper implements CriacaoMapper<Usuario, UsuarioCriacaoDTO> {
     @Override
     public Usuario toEntity(UsuarioCriacaoDTO usuarioCriacaoDTO) {
         Usuario usuario = new Usuario();

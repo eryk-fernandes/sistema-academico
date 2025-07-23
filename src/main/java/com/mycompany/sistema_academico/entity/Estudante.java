@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
@@ -37,8 +40,8 @@ public class Estudante {
     @Column(name = "periodo")
     private Integer periodo;
 
-    @Column(name = "curso")
-    private String curso;
+    @Column(name = "id_curso")
+    private Integer idCurso;
 
     @Column(name = "coeficiente_rendimento")
     private Double coeficienteRendimento;
@@ -48,5 +51,13 @@ public class Estudante {
 
     @Column(name = "disciplinas_pagas")
     private List<String> disciplinasPagas;
+
+    @CreationTimestamp
+    @Column(name = "instante_criacao")
+    private Instant instanteCriacao;
+
+    @UpdateTimestamp
+    @Column(name = "instante_atualizacao")
+    private Instant instanteAtualizacao;
 
 }
