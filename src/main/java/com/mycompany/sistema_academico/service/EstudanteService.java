@@ -62,13 +62,11 @@ public class EstudanteService {
 
         Estudante novoEstudante = estudanteOptional.get();
 
-        Estudante estudante = estudanteMapper.criarAtualizacaoMapper().toEntity(estudanteAtualizacaoDTO);
-
-        novoEstudante.setNome(estudante.getNome());
-        novoEstudante.setPeriodo(estudante.getPeriodo());
-        novoEstudante.setCoeficienteRendimento(estudante.getCoeficienteRendimento());
-        novoEstudante.setDisciplinasAtuais(estudante.getDisciplinasAtuais());
-        novoEstudante.setDisciplinasPagas(estudante.getDisciplinasPagas());
+        novoEstudante.setNome(estudanteAtualizacaoDTO.nome());
+        novoEstudante.setPeriodo(estudanteAtualizacaoDTO.periodo());
+        novoEstudante.setCoeficienteRendimento(estudanteAtualizacaoDTO.coeficienteRendimento());
+        novoEstudante.setDisciplinasAtuais(estudanteAtualizacaoDTO.disciplinasAtuais());
+        novoEstudante.setDisciplinasPagas(estudanteAtualizacaoDTO.disciplinasPagas());
 
         estudanteRepository.save(novoEstudante);
 

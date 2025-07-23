@@ -88,11 +88,9 @@ public class UsuarioService {
             }
         }
 
-        Usuario usuario = usuarioMapper.criarAtualizacaoMapper().toEntity(usuarioAtualizacaoDTO);
-
-        novoUsuario.setNomeUsuario(usuario.getNomeUsuario());
-        novoUsuario.setEmail(usuario.getEmail());
-        novoUsuario.setSenha(hashSenha(usuario.getSenha()));
+        novoUsuario.setNomeUsuario(usuarioAtualizacaoDTO.nomeUsuario());
+        novoUsuario.setEmail(usuarioAtualizacaoDTO.email());
+        novoUsuario.setSenha(hashSenha(usuarioAtualizacaoDTO.senha()));
 
         usuarioRepository.save(novoUsuario);
 

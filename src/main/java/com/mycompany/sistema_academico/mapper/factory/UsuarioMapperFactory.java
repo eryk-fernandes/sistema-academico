@@ -6,8 +6,6 @@ import com.mycompany.sistema_academico.dto.usuario.UsuarioAtualizacaoDTO;
 import com.mycompany.sistema_academico.entity.Usuario;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.CriacaoMapper;
 import com.mycompany.sistema_academico.mapper.abstract_mapper.RespostaMapper;
-import com.mycompany.sistema_academico.mapper.abstract_mapper.AtualizacaoMapper;
-import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioAtualizacaoMapper;
 import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioRespostaMapper;
 import com.mycompany.sistema_academico.mapper.concrete_mapper.usuario.UsuarioCriacaoMapper;
 
@@ -23,8 +21,4 @@ public class UsuarioMapperFactory implements MapperFactory<Usuario, UsuarioCriac
         return new UsuarioRespostaMapper();
     }
 
-    @Override
-    public AtualizacaoMapper<Usuario, UsuarioAtualizacaoDTO> criarAtualizacaoMapper() {
-        return new UsuarioAtualizacaoMapper();
-    }
 }
